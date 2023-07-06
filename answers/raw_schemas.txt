@@ -6,9 +6,9 @@ SHOW ALL TABLES;
 │ varchar  │ varchar │       varchar        │      varchar[]       │               varchar[]               │  boolean  │
 ├──────────┼─────────┼──────────────────────┼──────────────────────┼───────────────────────────────────────┼───────────┤
 │ main     │ main    │ bike_data            │ [tripduration, sta…  │ [VARCHAR, VARCHAR, VARCHAR, VARCHAR…  │ false     │
-│ main     │ main    │ central_park_weather │ [STATION, NAME, DA…  │ [VARCHAR, VARCHAR, DATE, DOUBLE, DO…  │ false     │
-│ main     │ main    │ daily_citi_bike_tr…  │ [date, trips, prec…  │ [DATE, BIGINT, DOUBLE, DOUBLE, DOUB…  │ false     │
-│ main     │ main    │ fhv_bases            │ [column0, column1,…  │ [VARCHAR, VARCHAR, VARCHAR, VARCHAR…  │ false     │
+│ main     │ main    │ central_park_weather │ [STATION, NAME, DA…  │ [VARCHAR, VARCHAR, VARCHAR, VARCHAR…  │ false     │
+│ main     │ main    │ daily_citi_bike_tr…  │ [date, trips, prec…  │ [VARCHAR, VARCHAR, VARCHAR, VARCHAR…  │ false     │
+│ main     │ main    │ fhv_bases            │ [base_number, base…  │ [VARCHAR, VARCHAR, VARCHAR, VARCHAR…  │ false     │
 │ main     │ main    │ fhv_tripdata         │ [dispatching_base_…  │ [VARCHAR, TIMESTAMP, TIMESTAMP, DOU…  │ false     │
 │ main     │ main    │ fhvhv_tripdata       │ [hvfhs_license_num…  │ [VARCHAR, VARCHAR, VARCHAR, TIMESTA…  │ false     │
 │ main     │ main    │ green_tripdata       │ [VendorID, lpep_pi…  │ [BIGINT, TIMESTAMP, TIMESTAMP, VARC…  │ false     │
@@ -60,13 +60,13 @@ DESCRIBE central_park_weather;
 ├─────────────┼─────────────┼─────────┼─────────┼─────────┼───────┤
 │ STATION     │ VARCHAR     │ YES     │         │         │       │
 │ NAME        │ VARCHAR     │ YES     │         │         │       │
-│ DATE        │ DATE        │ YES     │         │         │       │
-│ AWND        │ DOUBLE      │ YES     │         │         │       │
-│ PRCP        │ DOUBLE      │ YES     │         │         │       │
-│ SNOW        │ DOUBLE      │ YES     │         │         │       │
-│ SNWD        │ DOUBLE      │ YES     │         │         │       │
-│ TMAX        │ BIGINT      │ YES     │         │         │       │
-│ TMIN        │ BIGINT      │ YES     │         │         │       │
+│ DATE        │ VARCHAR     │ YES     │         │         │       │
+│ AWND        │ VARCHAR     │ YES     │         │         │       │
+│ PRCP        │ VARCHAR     │ YES     │         │         │       │
+│ SNOW        │ VARCHAR     │ YES     │         │         │       │
+│ SNWD        │ VARCHAR     │ YES     │         │         │       │
+│ TMAX        │ VARCHAR     │ YES     │         │         │       │
+│ TMIN        │ VARCHAR     │ YES     │         │         │       │
 │ filename    │ VARCHAR     │ YES     │         │         │       │
 ├─────────────┴─────────────┴─────────┴─────────┴─────────┴───────┤
 │ 10 rows                                               6 columns │
@@ -76,36 +76,36 @@ DESCRIBE daily_citi_bike_trip_counts_and_weather;
 │     column_name     │ column_type │  null   │   key   │ default │ extra │
 │       varchar       │   varchar   │ varchar │ varchar │ varchar │ int32 │
 ├─────────────────────┼─────────────┼─────────┼─────────┼─────────┼───────┤
-│ date                │ DATE        │ YES     │         │         │       │
-│ trips               │ BIGINT      │ YES     │         │         │       │
-│ precipitation       │ DOUBLE      │ YES     │         │         │       │
-│ snowfall            │ DOUBLE      │ YES     │         │         │       │
-│ max_temperature     │ DOUBLE      │ YES     │         │         │       │
-│ min_temperature     │ DOUBLE      │ YES     │         │         │       │
+│ date                │ VARCHAR     │ YES     │         │         │       │
+│ trips               │ VARCHAR     │ YES     │         │         │       │
+│ precipitation       │ VARCHAR     │ YES     │         │         │       │
+│ snowfall            │ VARCHAR     │ YES     │         │         │       │
+│ max_temperature     │ VARCHAR     │ YES     │         │         │       │
+│ min_temperature     │ VARCHAR     │ YES     │         │         │       │
 │ average_wind_speed  │ VARCHAR     │ YES     │         │         │       │
-│ dow                 │ BIGINT      │ YES     │         │         │       │
-│ year                │ BIGINT      │ YES     │         │         │       │
-│ month               │ BIGINT      │ YES     │         │         │       │
-│ holiday             │ BOOLEAN     │ YES     │         │         │       │
+│ dow                 │ VARCHAR     │ YES     │         │         │       │
+│ year                │ VARCHAR     │ YES     │         │         │       │
+│ month               │ VARCHAR     │ YES     │         │         │       │
+│ holiday             │ VARCHAR     │ YES     │         │         │       │
 │ stations_in_service │ VARCHAR     │ YES     │         │         │       │
-│ weekday             │ BOOLEAN     │ YES     │         │         │       │
-│ weekday_non_holiday │ BOOLEAN     │ YES     │         │         │       │
+│ weekday             │ VARCHAR     │ YES     │         │         │       │
+│ weekday_non_holiday │ VARCHAR     │ YES     │         │         │       │
 │ filename            │ VARCHAR     │ YES     │         │         │       │
-│ snow_depth          │ DOUBLE      │ YES     │         │         │       │
+│ snow_depth          │ VARCHAR     │ YES     │         │         │       │
 ├─────────────────────┴─────────────┴─────────┴─────────┴─────────┴───────┤
 │ 16 rows                                                       6 columns │
 └─────────────────────────────────────────────────────────────────────────┘
 DESCRIBE fhv_bases;
-┌─────────────┬─────────────┬─────────┬─────────┬─────────┬───────┐
-│ column_name │ column_type │  null   │   key   │ default │ extra │
-│   varchar   │   varchar   │ varchar │ varchar │ varchar │ int32 │
-├─────────────┼─────────────┼─────────┼─────────┼─────────┼───────┤
-│ column0     │ VARCHAR     │ YES     │         │         │       │
-│ column1     │ VARCHAR     │ YES     │         │         │       │
-│ column2     │ VARCHAR     │ YES     │         │         │       │
-│ column3     │ VARCHAR     │ YES     │         │         │       │
-│ filename    │ VARCHAR     │ YES     │         │         │       │
-└─────────────┴─────────────┴─────────┴─────────┴─────────┴───────┘
+┌──────────────┬─────────────┬─────────┬─────────┬─────────┬───────┐
+│ column_name  │ column_type │  null   │   key   │ default │ extra │
+│   varchar    │   varchar   │ varchar │ varchar │ varchar │ int32 │
+├──────────────┼─────────────┼─────────┼─────────┼─────────┼───────┤
+│ base_number  │ VARCHAR     │ YES     │         │         │       │
+│ base_name    │ VARCHAR     │ YES     │         │         │       │
+│ dba          │ VARCHAR     │ YES     │         │         │       │
+│ dba_category │ VARCHAR     │ YES     │         │         │       │
+│ filename     │ VARCHAR     │ YES     │         │         │       │
+└──────────────┴─────────────┴─────────┴─────────┴─────────┴───────┘
 DESCRIBE fhv_tripdata;
 ┌────────────────────────┬─────────────┬─────────┬─────────┬─────────┬───────┐
 │      column_name       │ column_type │  null   │   key   │ default │ extra │
@@ -205,7 +205,7 @@ DESCRIBE yellow_tripdata;
 │ improvement_surcharge │ DOUBLE      │ YES     │         │         │       │
 │ total_amount          │ DOUBLE      │ YES     │         │         │       │
 │ congestion_surcharge  │ DOUBLE      │ YES     │         │         │       │
-│ airport_fee           │ INTEGER     │ YES     │         │         │       │
+│ airport_fee           │ DOUBLE      │ YES     │         │         │       │
 │ filename              │ VARCHAR     │ YES     │         │         │       │
 ├───────────────────────┴─────────────┴─────────┴─────────┴─────────┴───────┤
 │ 20 rows                                                         6 columns │
