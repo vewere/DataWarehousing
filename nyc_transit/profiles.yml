@@ -2,5 +2,5 @@ default:
   outputs:
     dev:
       type: duckdb
-      path: ../main.db
+      path: ../../main.db # path to duckdb db
   target: dev
