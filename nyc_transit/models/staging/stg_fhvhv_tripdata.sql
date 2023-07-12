@@ -41,12 +41,5 @@ renamed as (
     from source
 )
 
--- drop rows with no pickup/dropoff date, 0 trip_miles, trip_time and passenger_count
-select distinct(*)
+select *
   from renamed
- where request_datetime is not null
-   and on_scene_datetime is not null
-   and pickup_datetime is not null
-   and dropOff_datetime is not null
-   and trip_miles > 0
-   and trip_time > 0

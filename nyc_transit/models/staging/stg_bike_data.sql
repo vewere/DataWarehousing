@@ -33,9 +33,5 @@ renamed as (
     from source
 )
 
--- drop rows with no start/end date and 0 duration 
-select distinct(*)
+select *
   from renamed
- where tripduration > 0
-   and start_time is not null
-   and stop_time is not null

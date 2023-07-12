@@ -23,5 +23,5 @@ renamed as (
     from source
 )
 
-select distinct(*) 
+select * 
   from renamed

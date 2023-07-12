@@ -14,13 +14,11 @@ renamed as (
       dropOff_datetime,
       PUlocationID as pickup_location_id,
       DOlocationID as dropoff_location_id,
+      -- ddrop sr_flag since it is always null
       Affiliated_base_number,
       filename
     from source
 )
 
--- drop rows with no pickup/dropoff date
-select distinct(*) 
+select * 
   from renamed
- where pickup_datetime is not null
-   and dropOff_datetime is not null
