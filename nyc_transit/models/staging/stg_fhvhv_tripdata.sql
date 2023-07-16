@@ -11,7 +11,8 @@ with source as (
 renamed as (
     select
       hvfhs_license_num,
-      dispatching_base_num,
+      -- remove trailing whitespace and convert to uppercase to resolve with matching to a value in the fhv_bases table
+      UPPER(RTRIM(dispatching_base_num)) as dispatching_base_num, 
       originating_base_num,
       request_datetime,
       on_scene_datetime,

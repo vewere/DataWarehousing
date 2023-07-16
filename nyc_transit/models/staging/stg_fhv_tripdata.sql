@@ -9,12 +9,13 @@ with source as (
 -- give columns more meaningful name
 renamed as (
     select
-      dispatching_base_num,
+      -- remove trailing whitespace and convert to uppercase to resolve with matching to a value in the fhv_bases table
+      UPPER(RTRIM(dispatching_base_num)) as dispatching_base_num,
       pickup_datetime,
       dropOff_datetime,
       PUlocationID as pickup_location_id,
       DOlocationID as dropoff_location_id,
-      -- ddrop sr_flag since it is always null
+      -- drop sr_flag column since it is always null
       Affiliated_base_number,
       filename
     from source
