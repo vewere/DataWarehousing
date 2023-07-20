@@ -140,7 +140,7 @@ models:
           - not_null
           - dbt_expectations.expect_column_to_exist
           - relationships:
-              to: source('main', 'fhv_bases')
+              to: source('staging', 'stg_fhv_bases')
               field: base_number
 
       - name: pickup_datetime
@@ -178,7 +178,7 @@ models:
           - not_null
           - dbt_expectations.expect_column_to_exist
           - relationships:
-              to: source('main', 'fhv_bases')
+              to: source('staging', 'stg_fhv_bases')
               field: base_number
               config:
                 severity: warn
