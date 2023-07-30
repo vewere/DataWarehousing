@@ -1,0 +1,50 @@
+┌───────────────┬───────────────────────────────────┬─────────────┬────────────────────┐
+│    Borough    │               Zone                │ no_of_trips │ avg_duration_mins  │
+│    varchar    │              varchar              │    int64    │       double       │
+├───────────────┼───────────────────────────────────┼─────────────┼────────────────────┤
+│ Bronx         │ Allerton/Pelham Gardens           │      785701 │  15.09086153638598 │
+│ Bronx         │ Bedford Park                      │     1827051 │ 15.412736152411728 │
+│ Bronx         │ Belmont                           │     1085248 │  15.62763349943976 │
+│ Bronx         │ Bronx Park                        │      156587 │  19.83292355048631 │
+│ Bronx         │ Bronxdale                         │      999044 │ 15.710980697546855 │
+│ Bronx         │ City Island                       │       76991 │ 23.136431530958163 │
+│ Bronx         │ Claremont/Bathgate                │     1367108 │ 15.215707903106411 │
+│ Bronx         │ Co-Op City                        │     1332947 │ 16.840012393591042 │
+│ Bronx         │ Country Club                      │      103467 │ 16.097953937004068 │
+│ Bronx         │ Crotona Park                      │       58091 │  15.76412869463428 │
+│ Bronx         │ Crotona Park East                 │      960023 │  15.26094583150612 │
+│ Bronx         │ East Concourse/Concourse Village  │     2036419 │ 16.047281035975406 │
+│ Bronx         │ East Tremont                      │     1684671 │ 15.371873796129927 │
+│ Bronx         │ Eastchester                       │     1021426 │ 15.152464299910125 │
+│ Bronx         │ Fordham South                     │      870116 │  15.72496195909511 │
+│ Bronx         │ Highbridge                        │     1376880 │ 15.842628260995875 │
+│ Bronx         │ Hunts Point                       │     1183182 │ 16.135908085146664 │
+│ Bronx         │ Kingsbridge Heights               │     1040857 │ 15.384905899657685 │
+│ Bronx         │ Longwood                          │      887472 │ 16.410581967656444 │
+│ Bronx         │ Melrose South                     │     1737467 │  16.66007124164085 │
+│   ·           │       ·                           │         ·   │          ·         │
+│   ·           │       ·                           │         ·   │          ·         │
+│   ·           │       ·                           │         ·   │          ·         │
+│ Staten Island │ Charleston/Tottenville            │      130510 │ 17.916772661098765 │
+│ Staten Island │ Eltingville/Annadale/Prince's Bay │      128979 │  17.53060575752642 │
+│ Staten Island │ Freshkills Park                   │        7934 │ 15.635870935215529 │
+│ Staten Island │ Great Kills                       │      194727 │ 17.445706039737683 │
+│ Staten Island │ Great Kills Park                  │         600 │              20.53 │
+│ Staten Island │ Grymes Hill/Clifton               │      339842 │ 23.878675972952138 │
+│ Staten Island │ Heartland Village/Todt Hill       │      325140 │ 17.745635726148738 │
+│ Staten Island │ Mariners Harbor                   │      450029 │   15.4668965777761 │
+│ Staten Island │ New Dorp/Midland Beach            │      180067 │ 18.017698967606503 │
+│ Staten Island │ Oakwood                           │      107817 │ 18.918213268779507 │
+│ Staten Island │ Port Richmond                     │      224142 │  16.39528513174684 │
+│ Staten Island │ Rossville/Woodrow                 │       75021 │ 16.750909745271326 │
+│ Staten Island │ Saint George/New Brighton         │      783641 │ 16.052111872655974 │
+│ Staten Island │ South Beach/Dongan Hills          │      267703 │ 19.099912963246584 │
+│ Staten Island │ Stapleton                         │      617640 │  22.99939932646849 │
+│ Staten Island │ West Brighton                     │      257146 │  16.22437059102611 │
+│ Staten Island │ Westerleigh                       │      238872 │ 15.358170903245252 │
+│ Unknown       │ NA                                │      324655 │  35.64455806933514 │
+│ Unknown       │ NV                                │     8907760 │  30.08873689906329 │
+│               │                                   │    15679790 │  27.85453472272269 │
+├───────────────┴───────────────────────────────────┴─────────────┴────────────────────┤
+│ 263 rows (40 shown)                                                        4 columns │
+└──────────────────────────────────────────────────────────────────────────────────────┘
